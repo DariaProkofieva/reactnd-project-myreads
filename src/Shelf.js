@@ -5,10 +5,10 @@ class Shelf extends React.Component {
   render() {
     return (
       <div className="bookshelf">
-        <h2 className="bookshelf-title">Want to Read</h2>
+        <h2 className="bookshelf-title">{this.props.name}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid"></ol>
-          <Book/>
+          <Book booksList={this.props.books} update={this.props.update}/>
         </div>
       </div>
     )
