@@ -7,8 +7,9 @@ class Shelf extends React.Component {
       <div className="bookshelf">
         <h2 className="bookshelf-title">{this.props.name}</h2>
         <div className="bookshelf-books">
-          <ol className="books-grid"></ol>
-          <Book booksList={this.props.books} update={this.props.update}/>
+          <ol className="books-grid">
+            <Book booksList={this.props.books} update={this.props.update}/>
+          </ol>
         </div>
       </div>
     )
