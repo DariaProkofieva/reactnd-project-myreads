@@ -5,12 +5,21 @@ import Change from './Change'
 class Book extends React.Component {
 
   render() {
+    const withoutThumbnail=this.props.bookDetail.imageLinks ? this.props.bookDetail.imageLinks.thumbnail : '';
+    const withoutAuthor=this.props.bookDetail.authors ? this.props.bookDetail.authors.join(" , ") : '';
     return(
       <div className="book">
         <div className="book-top">
-          <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: 'url("http://books.google.com/books/content?id=yDtCuFHXbAYC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72RRiTR6U5OUg3IY_LpHTL2NztVWAuZYNFE8dUuC0VlYabeyegLzpAnDPeWxE6RHi0C2ehrR9Gv20LH2dtjpbcUcs8YnH5VCCAH0Y2ICaKOTvrZTCObQbsfp4UbDqQyGISCZfGN&source=gbs_api")' }}></div>
-          <Change booksList={this.props.books} update={this.props.update}/>
+          <div className="book-cover"
+               style={{ width: 128,
+                        height: 188,
+                        backgroundImage: `url("${withoutThumbnail}")`}}></div>
+          <Change booksList={this.props.books}
+                  update={this.props.update}
+                  bookDetail={this.props.bookDetail}/>
         </div>
+        <div className="book-title">{this.props.bookDetail.title}</div>
+        <div className="book-authors">{withoutAuthor}</div>
       </div>
     )
   }
