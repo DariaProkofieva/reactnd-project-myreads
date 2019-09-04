@@ -16,6 +16,8 @@ class Book extends React.Component {
                         backgroundImage: `url("${withoutThumbnail}")`}}></div>
           <Change booksList={this.props.books}
                   update={this.props.update}
+                  selectShelf={this.props.bookDetail.shelf}
+                  searchedBooks={this.props.searchedBooks}
                   bookDetail={this.props.bookDetail}/>
         </div>
         <div className="book-title">{this.props.bookDetail.title}</div>

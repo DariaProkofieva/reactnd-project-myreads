@@ -9,9 +9,9 @@ class Bookcase extends React.Component {
         <div className="list-books-title">
           <h1>MyReads</h1>
         </div>
-          <Shelf name='Currently reading' booksList={this.props.booksList} update={this.props.update}/>
-          <Shelf name='Want to read' booksList={this.props.booksList} update={this.props.update}/>
-          <Shelf name='Read' booksList={this.props.booksList} update={this.props.update}/>
+          <Shelf shelfType='currentlyReading' name='Currently reading' booksList={this.props.booksList} update={this.props.update}/>
+          <Shelf shelfType='wantToRead' name='Want to read' booksList={this.props.booksList} update={this.props.update}/>
+          <Shelf shelfType='read' name='Read' booksList={this.props.booksList} update={this.props.update}/>
           <Link to='/search' className="open-search"></Link>
       </div>
     )
